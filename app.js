@@ -91,7 +91,7 @@ function drawRecipientsHeavy(array) {
     recipientOneElement.innerText = array[0].to
     recipientTwoElement.innerText = array[1].to
     recipientThreeElement.innerText = array[2].to
-    recipientFourElement.innerText = "N/A"
+    // recipientFourElement.innerText = "N/A"
 
 }
 
@@ -130,8 +130,8 @@ function drawRecipientsPriority(array) {
 
     recipientOneElement.innerText = array[0].to
     recipientTwoElement.innerText = array[1].to
-    recipientThreeElement.innerText = "N/A"
-    recipientFourElement.innerText = "N/A"
+    // recipientThreeElement.innerText = "N/A"
+    // recipientFourElement.innerText = "N/A"
 
 }
 
@@ -148,10 +148,11 @@ function drawIdentificationNumbersHeavy(array) {
         identificationNumbers += `${packages.trackingNumber}`
     })
 
+    
     identificationOneElement.innerText = array[0].trackingNumber
     identificationTwoElement.innerText = array[1].trackingNumber
     identificationThreeElement.innerText = array[2].trackingNumber
-    identificationFourElement.innerText = "N/A"
+    // identificationFourElement.innerText = "N/A"
 }
 
 function drawIdentificationNumbersFragile(array) {
@@ -188,17 +189,18 @@ function drawIdentificationNumbersPriority(array) {
 
     identificationOneElement.innerText = array[0].trackingNumber
     identificationTwoElement.innerText = array[1].trackingNumber
-    identificationThreeElement.innerText = "N/A"
-    identificationFourElement.innerText = "N/A"
+    // identificationThreeElement.innerText = "N/A"
+    // identificationFourElement.innerText = "N/A"
 }
 
 function drawAllPackages(){
 
-    let recipientElement = document.getElementById("recipient")
-    recipientElement.innerText = packages.to
-
-    let identificationElement = document.getElementById("identification-number")
-    identificationElement.innerText = packages.trackingNumber
+    drawRecipientsHeavy(packages)
+    drawRecipientsFragile(packages)
+    drawRecipientsPriority(packages)
+    drawIdentificationNumbersHeavy(packages)
+    drawIdentificationNumbersFragile(packages)
+    drawIdentificationNumbersPriority(packages)
 }
 
 drawAllPackages()
